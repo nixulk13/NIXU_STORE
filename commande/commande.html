@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Commande</title>
+    <link rel="stylesheet" href="../css/commande.css">
+</head>
+<body>
+    <form id="orderForm" action="traitement_commande.php" method="post">
+         <h1>Formulaire de Commande</h1>
+        <label for="nom">Nom :</label><br>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="prenom">Prénom :</label><br>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+
+        <label for="adresse">Adresse :</label><br>
+        <textarea id="adresse" name="adresse" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="taille">Taille :</label><br>
+        <select id="taille" name="taille" required>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select><br><br>
+
+        <label for="telephone">Téléphone :</label><br>
+        <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" required><br><br>
+
+        <button type="submit">Confirmer la commande</button>
+    </form>
+</body>
+</html>

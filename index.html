@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIXU STORE</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>NIXU STORE</h1>
+            <div class="nav-top">
+                <a href="Login et Inscription/login.html">Connexion</a>
+                <a href="Login et Inscription/inscription.html">Inscription</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#pants">Pantalons</a></li>
+                    <li><a href="#shoes">Chaussures</a></li>
+                    <li><a href="#tshirts">T-shirts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="pants" class="product-category">
+        <div class="container">
+            <h3>Pantalons</h3>
+            <div class="products">
+                <div class="product">
+                    <img src="images/multi-2.jpg" alt="Pantalon élégant pour hommes">
+                    <h4>Pantalon élégant pour hommes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">5000 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('Pantalon élégant pour hommes', '5000 Da')">Acheter</button>
+                </div>
+                <div class="product">
+                    <img src="images/multi-1.jpg" alt="Jean décontracté pour femmes">
+                    <h4>Jean décontracté pour femmes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">3500 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('Jean décontracté pour femmes', '3500 Da')">Acheter</button>
+                </div>
+                <div class="product">
+                    <img src="images/multi-3.jpg" alt="Short de sport pour hommes">
+                    <h4>Short de sport pour hommes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">2500 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('Short de sport pour hommes', '2500 Da')">Acheter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shoes" class="product-category">
+        <div class="container">
+            <h3>Chaussures</h3>
+            <div class="products">
+                <div class="product">
+                    <img src="images/multi-4.JFIF" alt="Baskets confort pour femmes">
+                    <h4>Baskets confort pour femmes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">4500 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('Baskets confort pour femmes', '4500 Da')">Acheter</button>
+                </div>
+                <div class="product">
+                    <img src="images/multi-6.jfif" alt="Chaussures habillées pour hommes">
+                    <h4>Chaussures habillées pour hommes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">6000 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('Chaussures habillées pour hommes', '6000 Da')">Acheter</button>
+                </div>
+                <div class="product">
+                    <img src="images/multi-7.jfif" alt="Bottes d'hiver pour femmes">
+                    <h4>Bottes d'hiver pour femmes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">7000 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('Bottes d\'hiver pour femmes', '7000 Da')">Acheter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tshirts" class="product-category">
+        <div class="container">
+            <h3>T-shirts</h3>
+            <div class="products">
+                <div class="product">
+                    <img src="images/multi-8.jfif" alt="T-shirt tendance pour hommes">
+                    <h4>T-shirt tendance pour hommes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">2000 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('T-shirt tendance pour hommes', '2000 Da')">Acheter</button>
+                </div>
+                <div class="product">
+                    <img src="images/multi-9.jfif" alt="T-shirt décontracté pour femmes">
+                    <h4>T-shirt décontracté pour femmes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">1800 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('T-shirt décontracté pour femmes', '1800 Da')">Acheter</button>
+                </div>
+                <div class="product">
+                    <img src="images/multi-10.jfif" alt="T-shirt sport pour hommes">
+                    <h4>T-shirt sport pour hommes</h4>
+                    <p>Description du produit...</p>
+                    <span class="price">2500 Da</span>
+                    <button class="buy-button" onclick="openOrderWindow('T-shirt sport pour hommes', '2500 Da')">Acheter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mon Store de Vêtements</p>
+        </div>
+    </footer>
+
+  <script>
+        function openOrderWindow(productName, price) {
+            const orderLink = "commande/commande.html?produit=" + encodeURIComponent(productName) + "&prix=" + encodeURIComponent(price);
+            window.open(orderLink, "_blank");
+        }
+    </script>
+
+    <script>
+        // Sélectionnez tous les liens des catégories
+        const categoryLinks = document.querySelectorAll('nav ul a');
+
+        // Parcourez chaque lien et ajoutez un écouteur d'événements clic
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                // Empêchez le comportement par défaut du lien
+                event.preventDefault();
+
+                // Obtenez l'ID de la section cible à partir de l'attribut href du lien
+                const targetId = link.getAttribute('href').substring(1);
+
+                // Masquez toutes les sections de produits
+                document.querySelectorAll('.product-category').forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Affichez uniquement la section cible
+                document.getElementById(targetId).style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
